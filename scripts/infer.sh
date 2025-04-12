@@ -14,7 +14,7 @@ tau=0.5
 rope2d_normalized_by_hw=2
 add_lvl_embeding_only_first_block=1
 rope2d_each_sa_layer=1
-text_encoder_ckpt=weights/flan-t5-xl
+text_encoder_ckpt=google/flan-t5-xl
 text_channels=2048
 apply_spatial_patchify=0
 

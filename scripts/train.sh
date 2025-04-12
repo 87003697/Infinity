@@ -3,7 +3,7 @@
 set -x
 
 # set dist args
-# SINGLE=1
+SINGLE=1
 nproc_per_node=${ARNOLD_WORKER_GPU}
 
 if [ ! -z "$SINGLE" ] && [ "$SINGLE" != "0" ]; then
@@ -35,7 +35,7 @@ echo "[master_port: ${master_port}]"
 export OMP_NUM_THREADS=8
 export NCCL_IB_DISABLE=0
 export NCCL_IB_GID_INDEX=3
-export NCCL_SOCKET_IFNAME=eth0
+# export NCCL_SOCKET_IFNAME=eth0
 
 
 BED=checkpoints
@@ -96,7 +96,7 @@ train.py \
 --use_streaming_dataset 1 \
 --iterable_data_buffersize 30000 \
 --Ct5=2048 \
---t5_path=weights/flan-t5-xl \
+--t5_path=google/flan-t5-xl \
 --vae_type 32 \
 --vae_ckpt=weights/infinity_vae_d32_rdn_short.pth  \
 --wp 0.00000001 \
